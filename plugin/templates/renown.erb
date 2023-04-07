@@ -1,0 +1,11 @@
+<%= header %>
+<%= center( char.name + "'s Gained Renown for the Current Season", 78 ) %>
+<%= divider %>
+<%= titles -%>
+<%= divider %>
+<% gained.each do |r| %>
+<%= r -%>
+<% end %>
+%r<%= divider %>
+<%= gained_total %>
+<%= footer %>

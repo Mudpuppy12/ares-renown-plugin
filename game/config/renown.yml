@@ -1,0 +1,60 @@
+---
+renown:
+  achievements:
+    renown_leading:
+      type: story
+      message: Temporary most popular member of court.
+    renown_favorite:
+      type: story
+      message: Favorite of the Queen at the end of the season.
+  current_leader_text: Favorite of the week
+  regular_check_cron:
+    day:
+    - Mon
+    hour:
+    - 11
+    minute:
+    - 50
+  renown_category: Announcements
+  renown_fields:
+  - field: name
+    width: 28
+    title: Name
+  - field: gained
+    width: 10
+    title: Renown Gained
+  - field: group
+    value: house
+    width: 18
+    title: House
+  - field: rank
+    width: 18
+    title: Rank
+  renown_group: house
+  renown_members:
+  - group: faction
+    value: Noble
+  shortcuts: {}
+  standard_types:
+  - type: Freeform
+    points: 0
+  - type: Minor Scandal
+    points: -50
+  - type: Major Scandal
+    points: -150
+  - type: Single Contest Winner
+    points: 200
+  - type: Overall Contest Winner
+    points: 500
+  - type: Fitting Remark
+    points: 50
+  - type: Courageous Statement
+    points: 100
+  visible: true
+  web_renown_total_fields:
+  - field: group
+    value: house
+    title: House
+  - field: group
+    value: rank
+    title: Rank

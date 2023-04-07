@@ -1,0 +1,27 @@
+<div class="table-responsive">
+
+<table class="table table-striped">
+  <thead>
+      <th>{{"Name"}}</th>
+      <th>{{"Total Renown"}}</th>
+   </thead>
+
+  <tbody>
+    {{#each this.list as |entry| }}
+    <tr>
+        <td>
+            {{entry.name}}
+        </td>
+        <td>
+            {{entry.total}}
+        </td>
+    </tr>
+    {{/each}}
+  </tbody>
+
+</table>
+</div>
+
+<br><br>
+
+{{outlet}}

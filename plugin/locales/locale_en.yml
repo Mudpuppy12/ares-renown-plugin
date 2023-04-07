@@ -1,0 +1,4 @@
+---
+en:
+  renown: 
+    weekly_favorite_message: "Congratulations! Currently leading as the favorite of the court is %{name} with %{points} points."

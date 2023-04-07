@@ -1,0 +1,16 @@
+{{page-title "renown-top"}}
+<h1>Renown - Current Rankings</h1>
+
+   <div class="row">
+       <div class="col col-md-6 col-sm-12">
+            <h2>Top Ten Characters</h2>
+            <RenownTopList @list={{this.model.toplist.chars}} />
+       </div>
+       <div class="col col-md-6 col-sm-12">
+            <h2>Top Ten Houses</h2>
+            <RenownTopList @list={{this.model.toplist.orgs}} />
+       </div>
+   </div>
+
+{{outlet}}
+
