@@ -13,27 +13,7 @@ module AresMUSH
       # @example
       #    return { goals: Website.format_markdown_for_html(char.goals) }
       def self.get_fields_for_viewing(char, viewer)
-        if (char.limit > 0)
-            limit = Economy.prettify(char.limit)
-        else 
-            limit = "Not set."
-        end
-        if (char.block_expiry)
-            expiry = "Expiry Date: " + char.block_expiry
-        else
-            expiry = char.block_expiry
-        end
-        return { goals: Website.format_markdown_for_html(char.goals),
-          marque: char.marque.to_i,
-          connections: Website.format_markdown_for_html(char.connections),
-          pen_traits: PenTraits.build_web_char_data(char, viewer),
-          house_list: Marque.build_web_house_list(char, viewer),
-          limit: Website.format_markdown_for_html(limit),
-          block_info: Website.format_markdown_for_html(char.block_info),
-          block_expiry: Website.format_markdown_for_html(expiry),
-          modifiers: Economy.build_web_econ_modifiers(char,viewer),
-          econ_chart: Economy.build_web_econ_chart(char,viewer),
-          renown_gained: Renown.build_web_renown_data(char, viewer) }
+        return { renown_gained: Renown.build_web_renown_data(char, viewer) }
       end
     
       # Gets custom fields for the character profile editor.
@@ -46,7 +26,7 @@ module AresMUSH
       # @example
       #    return { goals: Website.format_input_for_html(char.goals) }
       def self.get_fields_for_editing(char, viewer)
-       return { goals: Website.format_input_for_html(char.goals) }
+       return { }
        end
 
       # Gets custom fields for character creation (chargen).
@@ -58,14 +38,7 @@ module AresMUSH
       # @example
       #    return { goals: Website.format_input_for_html(char.goals) }
       def self.get_fields_for_chargen(char)
-         return { goals: Website.format_input_for_html(char.goals),
-           marque: Website.format_input_for_html(char.marque),
-           pen_traits: PenTraits.build_web_char_data(char, char),
-           connections: Website.format_input_for_html(char.connections),
-           cg_adept: char.ranks_rank == "Adept",
-           cg_connections: char.fs3_advantages.find(name: "Connections").first != nil,
-           cg_traits_set: !PenTraits.traits_not_set(char),
-           cg_traits_max_points: Global.read_config("pentraits", "trait_points") }
+         return { }
       end
       
       # Saves fields from profile editing.
@@ -79,12 +52,7 @@ module AresMUSH
       #        char.update(goals: Website.format_input_for_mush(char_data[:custom][:goals]))
       #        return []
       def self.save_fields_from_profile_edit(char, char_data)
-         web_goals = char_data[:custom][:goals]
-         if (web_goals != "") 
-           char.update(goals: Website.format_input_for_mush(char_data[:custom][:goals]))
-         else
-           char.update(goals: nil)
-         end  
+        return []
       end
       
       # Saves fields from character creation (chargen).
@@ -98,23 +66,6 @@ module AresMUSH
       #        char.update(goals: Website.format_input_for_mush(chargen_data[:custom][:goals]))
       #        return []
       def self.save_fields_from_chargen(char, chargen_data)
-        PenTraits.save_char(char,chargen_data)
-
-        char.update(marque: chargen_data[:custom][:marque])
-
-        web_goals = chargen_data[:custom][:goals]
-        if (web_goals != "") 
-          char.update(goals: web_goals)
-        else
-          char.update(goals: nil)
-        end  
-
-        web_con = chargen_data[:custom][:connections]
-        if (web_con != "")
-          char.update(connections: web_con)
-        else
-          char.update(connections: nil)
-        end
         return []
       end
       
