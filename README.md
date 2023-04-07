@@ -11,6 +11,8 @@ Wherever progress is awarded based on IC achievements, be it for the individual 
 * Admin: Awarding points, viewing current renown, resetting renown of all characters. Both from the game client and the webportal
 * Players: View their current renown status, their renown entries and respective points, both from the game client and the webportal.
 * Webportal: Renown Management route, where admin can view character points and family/org points, add entries, reset points.
+* Webportal: Renown top ranking lists route.
+* Game client: renown/top command to view top ranking lists on game.
 
 ## Screenshots
 tbd.
@@ -18,13 +20,13 @@ tbd.
 ## Installation
 In the game, run: plugin/install https://github.com/cailleach1310/ares-renown-plugin
 
-### Updating Custom Profile and Chargen Files
+### Updating Custom Profile Files
 If you do not have any existing edits to these custom files, you can use the files in the custom_files folder of this repository as-is. If you do, then you may use them as templates to add the lines of code needed for the renown plugin.
 
 #### aresmush/plugins/profile/custom_char_fields.rb
 Update with: custom_files/custom_char_fields.rb
 
-### Updating Custom Web Portal Chargen and Profile Files
+### Updating Custom Web Portal Profile Files
 If you don't have any existing edits to these custom files, you can use the files in the custom_files folder of this repository as-is. If you do, then you may use them as templates to add the lines of code needed for the renown plugin.
 
 #### ares-webportal/app/custom-routes.js
@@ -42,6 +44,7 @@ Update with: custom_files/profile-custom-tabs.hbs
 
 #### /aresmush/game/config/website.yml
 Add a route to the top bar menu for the admin management page. This route is limited to admin and coder roles. 
+Add a route for the renown top rankings. This route is limited to logged in players and admins.
 
 For example:
 
@@ -49,6 +52,8 @@ For example:
     (...)
     - title: System
       menu:
+        - title: Renown - Rankings
+          route: renown-top
         - title: Manage Renown
           route: renown-management
     (...)
