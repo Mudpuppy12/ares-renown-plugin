@@ -67,16 +67,30 @@ You don't have to modify the marque.yml for the plugin to work, but you can make
 The plugin comes with two predefined achievements. More can be added here.
 
 #### renown_fields
-These fields will be shown in the webportal courtesan management route.
+These fields will be shown in the webportal renown management route.
 
 #### renown_group
-Define here the group that will as family/organisation benefit from their members' renown. For example "house".
+Define here the group that will as family/organisation benefit from their members' renown. For example "house" ot "family".
 
 #### renown_members
-Here you can define, which kinds of characters are considered in the renown system. Entries will be "group" and "value", for instance "faction" and "Noble". If you leave it at the default "{}" all approved characters will be considered.
+Here you can define which kinds of characters are considered in the renown system. Entries will be "group" and "value", for instance "faction" and "Noble". If you change this to "{}" all approved characters will be considered.
+
+     renown_members:
+     - group: faction
+       value: Noble
 
 #### shortcuts
 Here is a space where you can define shortcuts for the commands.
+
+#### standard_types
+Here you can define various standard types for renown entries. Use "type" for the name, and you can set points to positive or negative values.
+
+     standard_types:
+     - type: Freeform
+       points: 0
+
+#### visible
+Set this to "false", if you don't want renown to be visible to other players. Default is "true".
 
 ## Uninstallation
 Removing the plugin requires some code fiddling. See [Uninstalling Plugins](https://www.aresmush.com/tutorials/code/extras.html#uninstalling-plugins).
