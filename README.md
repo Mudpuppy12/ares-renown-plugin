@@ -61,7 +61,7 @@ For example:
     (...)
 
 ### renown.yml 
-You don't have to modify the marque.yml for the plugin to work, but you can make adjustments here. The keys in the yaml are explained below.
+You don't have to modify the renown.yml for the plugin to work, but you can make adjustments here. The keys in the yaml are explained below.
 
 #### achievements
 The plugin comes with two predefined achievements. More can be added here.
