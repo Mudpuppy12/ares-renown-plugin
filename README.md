@@ -99,6 +99,25 @@ Here you can define various standard types for renown entries. Use "type" for th
 #### visible
 Set this to "false", if you don't want renown to be visible to other players. Default is "true".
 
+### Optional: Replace 'renown' with another expression
+Maybe the expression 'renown' doesn't quite fit what you need for your game. For example, 'glory' or 'influence' might be better choices, or something else entirely.
+
+#### Modify the Config File 
+Simply replace 'Renown' with the expression of your choice in the key 'renown_title'. This should affect relevant routes in the webportal and templates in the game client.
+
+#### Defining Aliases for the Commands
+Clientside, aliases need to be added to the 'renown.yml' as shortcuts, as you'll probably wish to use the new expression for the client commands. See the example below.
+
+     shortcuts:
+       influence/add: renown/group
+       influence/group: renown/group
+       influence/reset: renown/reset
+       influence/top: renown/top
+       influence/view: renown/view
+
+#### Adjusting the Help Files
+You'll need to adjust the help files in the folders /plugins/renown/help/en: rename them and edit them.
+
 ## Uninstallation
 Removing the plugin requires some code fiddling. See [Uninstalling Plugins](https://www.aresmush.com/tutorials/code/extras.html#uninstalling-plugins).
 
