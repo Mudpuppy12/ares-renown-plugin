@@ -109,7 +109,7 @@ Simply replace 'Renown' with the expression of your choice in the key 'renown_ti
 Clientside, aliases need to be added to the 'renown.yml' as shortcuts, as you'll probably wish to use the new expression for the client commands. See the example below.
 
      shortcuts:
-       influence/add: renown/group
+       influence/add: renown/add
        influence/group: renown/group
        influence/reset: renown/reset
        influence/top: renown/top
