@@ -79,15 +79,22 @@ Here you can define which kinds of characters are considered in the renown syste
      - group: faction
        value: Noble
 
+#### renown_title
+This is where you define the expression used for renown in your game. Perhaps you prefer "Influence" or "Glory".
+
 #### shortcuts
 Here is a space where you can define shortcuts for the commands.
 
 #### standard_types
-Here you can define various standard types for renown entries. Use "type" for the name, and you can set points to positive or negative values.
+Here you can define various standard types for renown entries. Use "type" for the name, and you can set points to positive or negative values. See the examples below.
 
      standard_types:
      - type: Freeform
        points: 0
+     - type: Minor Scandal
+       points: -50
+     - type: Heroic Deed
+       points: 250
 
 #### visible
 Set this to "false", if you don't want renown to be visible to other players. Default is "true".
