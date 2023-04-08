@@ -4,18 +4,18 @@ module AresMUSH
       
       attr_accessor :chars
       
-      def initialize(chars,house)
+      def initialize(chars,org)
         @chars = chars
-        @house = house
+        @org = org
         super File.dirname(__FILE__) + "/renown_group.erb"
       end
 
-      def house_title
-         title = "House " + @house + " - Renown"
+      def org_title
+         title = Renown.group.titleize + " " + @org + " - " + Renown.title
          return title
       end
       
-      def house_chars
+      def org_chars
         list = []
         @chars.each do |c|
           list << "%r#{left(c[0],30)} #{left(c[1],19)} #{right(Renown.prettify(c[2]),15)}"
@@ -23,8 +23,9 @@ module AresMUSH
         list
       end
 
-      def house_total
-        total = Renown.calculate_house_total(@house)
+      def org_total
+        type = Global.read_config("renown","renown.group")
+        total = Renown.calculate_total(type,@org)
         title = "Total"
         line = "#{left(title,50)} #{right(Renown.prettify(total),15)}"
       end

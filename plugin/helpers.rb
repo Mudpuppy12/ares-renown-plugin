@@ -47,6 +47,15 @@ module AresMUSH
         return string
      end
 
+     def self.plural(noun)
+       if (noun[-1] == "y")
+          len = noun.length
+          return noun[0..(len-2)] + "ies"
+       else
+          return noun + "s"
+       end
+     end
+
     def self.get_renown_chars
       classes = Global.read_config("renown", "renown_members")
       if (classes == {})

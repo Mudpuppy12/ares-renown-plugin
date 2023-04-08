@@ -3,11 +3,10 @@ renown:
   achievements:
     renown_leading:
       type: story
-      message: Temporary most popular member of court.
+      message: Leader of the week.
     renown_favorite:
       type: story
-      message: Favorite of the Queen at the end of the season.
-  current_leader_text: Favorite of the week
+      message: Favorite at the end of the season.
   regular_check_cron:
     day:
     - Mon
@@ -34,7 +33,10 @@ renown:
   renown_members:
   - group: faction
     value: Noble
-  shortcuts: {}
+  renown_title: Renown
+  shortcuts:
+    influence/view: renown/view
+    influence/top: renown/top
   standard_types:
   - type: Freeform
     points: 0

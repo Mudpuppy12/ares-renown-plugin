@@ -9,6 +9,10 @@ module AresMUSH
         super File.dirname(__FILE__) + "/renown.erb"
       end
       
+      def title
+        center( @char.name + "'s " + Renown.title + " in the Current Season", 78 )
+      end 
+
       def titles
         "#{left("Reason",35)} #{right("Points",10)}   #{left("Awarded on",16)}   #{left("by",10)}%r"
       end

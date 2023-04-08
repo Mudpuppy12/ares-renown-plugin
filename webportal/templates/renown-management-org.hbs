@@ -21,11 +21,7 @@
           {{#if (eq field 'char')}}
             <CharIconInline @char={{value}} />
           {{else}} 
-             {{#if (eq field 'Action')}}
-                 <button name="addentry" {{action (mut this.addRenownEntry) true}} class="btn btn-secondary">Add Renown Entry</button>
-             {{else}}
-               {{value}}
-             {{/if}}
+            {{value}}
           {{/if}}
         </td>
       {{/each-in}}
@@ -37,7 +33,7 @@
 
 </div>
 
-<p>House Total: {{this.model.people.renown}}</p> 
+<p>{{this.model.people.orgtype}} Total: {{this.model.people.renown}}</p> 
 
 {{outlet}}
 <AddRenownChar @addRenownEntry={{this.addRenownEntry}}/>

@@ -5,7 +5,7 @@ module AresMUSH
 
         fields = Global.read_config("renown", "web_renown_total_fields")
         titles = fields.map { |f| f['title'] }
-        titles << 'Renown'
+        titles << Renown.title
         org = request.args[:org]
 
         chars = Chargen.approved_chars.select {|c| c.groups[Renown.group] == org }
@@ -32,10 +32,13 @@ module AresMUSH
 
         total = Renown.prettify(Renown.calculate_total(Renown.group,org))
         
+        orgtype = Renown.group.titleize
+
         {
           titles: titles,
           people: people,
-          renown: total 
+          renown: total,
+          orgtype: orgtype 
         }
       end
     end

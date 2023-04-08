@@ -11,7 +11,7 @@ export default Route.extend(DefaultRoute, {
         let api = this.gameApi;
         return RSVP.hash({
              orgs:  api.request('renownOrgs'),
-             people: api.requestOne('renownListFull'),
+             people: api.requestOne('renownListFull')
            })
            .then((model) => EmberObject.create(model));
     }

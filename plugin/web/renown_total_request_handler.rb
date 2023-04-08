@@ -5,12 +5,13 @@ module AresMUSH
 
         fields = Global.read_config("renown", "web_renown_total_fields")
         titles = fields.map { |f| f['title'] }
-        titles << 'Renown'
+        titles << Renown.title
         chars = Renown.get_renown_chars.sort_by { |c| c.name}
 
         people = []
         charnames = []
         types = Renown.standard_types
+        renown_title = Renown.title
         
         chars.each do |c|
           char_data = {}
@@ -34,7 +35,8 @@ module AresMUSH
           titles: titles,
           people: people,
           charnames: charnames,
-          standard_types: types
+          standard_types: types,
+          title: renown_title
         }
       end
     end

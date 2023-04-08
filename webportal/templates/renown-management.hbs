@@ -1,5 +1,5 @@
 {{page-title "renown-management"}}
-<h1>Renown Management</h1>
+<h1>{{this.model.people.title}} Management</h1>
 
 <RenownNav @orgs={{this.model.orgs}} />
 
@@ -33,12 +33,12 @@
 </div>
 
 <br><br>
-<AddRenownChar @chars={{this.model.people.charnames}} @types={{this.model.people.standard_types}} @addRenownEntry={{this.addRenownEntry}}/>
-<ResetAllRenown @resetAllRenown={{this.resetAllRenown}}/>
+<AddRenownChar @chars={{this.model.people.charnames}} @types={{this.model.people.standard_types}} @title={{this.model.people.title}} @addRenownEntry={{this.addRenownEntry}}/>
+<ResetAllRenown @title={{this.model.people.title}} @resetAllRenown={{this.resetAllRenown}} />
 
 <div align="right">
-<button name="addentry" {{action (mut this.addRenownEntry) true}} class="btn btn-secondary">Add Renown Entry</button>
-<button name="renownreset" {{action (mut this.resetAllRenown) true}} class="btn btn-secondary">Reset Renown for All</button>
+<button name="addentry" {{action (mut this.addRenownEntry) true}} class="btn btn-secondary">Add Entry</button>
+<button name="renownreset" {{action (mut this.resetAllRenown) true}} class="btn btn-secondary">Reset All</button>
 </div>
 
 {{outlet}}
