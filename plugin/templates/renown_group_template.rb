@@ -24,7 +24,7 @@ module AresMUSH
       end
 
       def org_total
-        type = Global.read_config("renown","renown.group")
+        type = Global.read_config("renown","renown_group")
         total = Renown.calculate_total(type,@org)
         title = "Total"
         line = "#{left(title,50)} #{right(Renown.prettify(total),15)}"

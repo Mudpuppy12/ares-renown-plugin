@@ -12,7 +12,7 @@ module AresMUSH
 
       def handle
 
-           if (self.name != enactor.name) && !(enactor.is_admin?)
+           if (self.name != enactor.name) && !(enactor.is_admin?) && !(Renown.visible)
               client.emit_failure "You're not allowed to do that.\n"
               return
            end

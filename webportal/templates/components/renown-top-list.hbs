@@ -4,17 +4,13 @@
   <thead>
       <th>{{"Name"}}</th>
       <th>{{this.renowntitle}}</th>
-   </thead>
+  </thead>
 
   <tbody>
     {{#each this.list as |entry| }}
     <tr>
-        <td>
-            {{entry.name}}
-        </td>
-        <td>
-            {{entry.total}}
-        </td>
+        <td>{{entry.name}}</td>
+        <td>{{entry.total}}</td>
     </tr>
     {{/each}}
   </tbody>

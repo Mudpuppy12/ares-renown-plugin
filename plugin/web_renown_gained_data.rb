@@ -8,8 +8,9 @@ module AresMUSH
 
         is_owner = (viewer && viewer.id == char.id)
         is_admin = viewer.is_admin?
+        is_visible = Renown.visible
 
-        show_renown = is_admin || is_owner
+        show_renown = is_visible || is_admin || is_owner
         
         if show_renown
            return build_renown_data(char)
