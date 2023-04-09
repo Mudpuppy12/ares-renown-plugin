@@ -1,13 +1,13 @@
 # Ares Renown Plugin
-A plugin for handling renown - useful in games where renown/glory points are awarded. 
+A plugin for handling renown - useful in games where renown/glory/influence points are awarded. 
 
 ## Credits
 Lyanna @ AresCentral
 
 ## Overview
-Wherever progress is awarded based on IC achievements, be it for the individual character or the family or organisation they are part of, game staff may award points and review them at certain times to decide an improvement or worsening of their situation. This system is based on the idea of seasons, meaning that renown points will be reset with the start of each new season.
+Wherever progress is awarded based on IC achievements, be it for the individual character or the family or organisation they are part of, game staff may award points and review them at certain times to decide an improvement or worsening of their situation. This system is based on the idea of seasons, meaning that renown points can be reset with the start of each new season.
 
-The respective amounts for awarded renown points are up to admin, but within this system it is possible to define certain standard types that come with default amount suggestions. Even if visibility of renown details can be triggered through a setting within the renown.yml config file, I'd recommend visibility for the sake of transparency.
+The respective amounts for awarded renown points are up to admin, but within this system it is possible to define certain standard types that come with default amount suggestions. Even if visibility of renown details can be configured through a setting within the renown.yml config file, I'd recommend visibility for the sake of transparency.
 
 ### What this plugin covers
 * Admin: Awarding points, viewing current renown, resetting renown of all characters. Both from the game client and the webportal.
@@ -15,6 +15,7 @@ The respective amounts for awarded renown points are up to admin, but within thi
 * Webportal: Renown Management route, where admin can view character points and family/org points, add entries, reset points.
 * Webportal: Renown top ranking lists route.
 * Game client: renown/top command to view top ranking lists on game.
+* Regular cron job to post an announcement of the character who has earned the most renown in a specified time span.
 
 ## Screenshots
 tbd.
@@ -23,13 +24,10 @@ tbd.
 In the game, run: plugin/install https://github.com/cailleach1310/ares-renown-plugin
 
 ### Updating Custom Profile Files
-If you do not have any existing edits to these custom files, you can use the files in the custom_files folder of this repository as-is. If you do, then you may use them as templates to add the lines of code needed for the renown plugin.
+This plugin is relatively easy in regards to updating custom files, as it only requires profile and route adjustments. If you do not have any existing edits to these custom files, you can use the files in the custom_files folder of this repository as-is. If you do, then you may use them as templates to add the lines of code needed for the renown plugin.
 
 #### aresmush/plugins/profile/custom_char_fields.rb
 Update with: custom_files/custom_char_fields.rb
-
-### Updating Custom Web Portal Profile Files
-If you don't have any existing edits to these custom files, you can use the files in the custom_files folder of this repository as-is. If you do, then you may use them as templates to add the lines of code needed for the renown plugin.
 
 #### ares-webportal/app/custom-routes.js
 Update with: custom_files/custom-routes.js
@@ -66,11 +64,23 @@ You don't have to modify the renown.yml for the plugin to work, but you can make
 #### achievements
 The plugin comes with two predefined achievements. More can be added here.
 
+#### cron_message_category
+This is the forum category that the regular cron job will post to. Default is "Announcements".
+
+#### cron_message_title
+Title for the regular forum post, as this will depend on context and time span.
+
+#### cron_regular_check
+Configure here the time at which the cron job will run.
+
+#### cron_renown_days
+This value defines the number of days that will be considered for the regular renown check.
+
 #### renown_fields
 These fields will be shown in the webportal renown management route.
 
 #### renown_group
-Define here the group that will as family/organisation benefit from their members' renown. For example "house" or "family".
+Define here the group that will as family/organisation benefit from their members' renown. For example "house" or "family". Please use lowercase for this entry.
 
 #### renown_members
 Here you can define which kinds of characters are considered in the renown system. Entries will be "group" and "value", for instance "faction" and "Noble". If you change this to "{}", all approved characters will be considered.
@@ -80,13 +90,13 @@ Here you can define which kinds of characters are considered in the renown syste
        value: Noble
 
 #### renown_title
-This is where you define the expression used for renown in your game. Perhaps you prefer "Influence" or "Glory".
+This is where you define the expression used for renown in your game, if "Renown" doesn't work for you. Other options include for instance "Influence" and "Glory".
 
 #### shortcuts
 Here is a space where you can define shortcuts for the commands.
 
 #### standard_types
-Here you can define various standard types for renown entries. Use "type" for the name, and you can set points to positive or negative values. See the examples below.
+Here you can define various standard types for renown entries when working with the renown management route in the webportal. Use "type" for the name, and you can set points to positive or negative values. See the examples below. This can make adding new entries for characters easier.
 
      standard_types:
      - type: Freeform
@@ -98,6 +108,9 @@ Here you can define various standard types for renown entries. Use "type" for th
 
 #### visible
 Set this to "false", if you don't want renown to be visible to other players. Default is "true".
+
+#### web_renown_total_fields
+These entries are listed in the renown management route and can be configured here.
 
 ### Optional: Replace 'renown' with another expression
 Maybe the expression 'renown' doesn't quite fit what you need for your game. For example, 'glory' or 'influence' might be better choices, or something else entirely.
@@ -117,6 +130,9 @@ Clientside, aliases need to be added to the 'renown.yml' as shortcuts, as you'll
 
 #### Adjusting the Help Files
 You'll need to adjust the help files in the folders /plugins/renown/help/en: rename them and edit them.
+
+#### Further Adjustments
+Custom profile files may have to be adjusted, also some website menu entries.
 
 ## Uninstallation
 Removing the plugin requires some code fiddling. See [Uninstalling Plugins](https://www.aresmush.com/tutorials/code/extras.html#uninstalling-plugins).
