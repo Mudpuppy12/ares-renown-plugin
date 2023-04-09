@@ -35,6 +35,11 @@ Please note the nav bar at the top that allows you to switch to a view of a sing
 
 Adding new renown entries and resetting all renown can be triggered through the buttons at the bottom.
 
+![add-entry-webportal](/images/renown_add_entry_webportal.PNG)
+
+![reset-renown-webportal](/images/renown_reset_webportal.PNG)
+
+
 ### Webportal view of the renown management org route (admin)
 ![renown-management-org](/images/renown_management_org_webportal.PNG)
 
