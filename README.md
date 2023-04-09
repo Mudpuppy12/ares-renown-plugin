@@ -18,13 +18,34 @@ The respective amounts for awarded renown points are up to admin, but within thi
 * Regular cron job to post an announcement of the character who has earned the most renown in a specified time span.
 
 ## Screenshots
-tbd.
+### In views of the 'renown/view' command
+![ren-own-view-client](/images/renown_view_client.PNG)
+
+![ren-own-view-webportal](/images/renown_view_webportal.PNG)
+
+If 'visible' flag is set to 'false' in the config, this view is only to the respective character and admin. Otherwise visible to all.
+The view if psart of the character page on the webportal.
+
+### Webportal view of the renown management route (admin)
+![renown-management-webportal](/images/renown_management_webportal.PNG)
+
+The renown management route is borrowed in part from the census code. The route is only available to admin and coder roles.
+
+Please note the nav bar at the top that allows you to switch to a view of a single houses/organizations. The list is generated dynamically from all orgs of approved renown characters. Unplayed orgs won't get listed.
+
+Adding new renown entries and resetting all renown can be triggered through the buttons at the bottom.
+
+### Webportal view of the renown management org route (admin)
+![renown-management-org](/images/renown_management_org_webportal.PNG)
+
+Here we have the view for a single org. This view is limited to admin and coder roles. 
+
 
 ## Installation
 In the game, run: plugin/install https://github.com/cailleach1310/ares-renown-plugin
 
 ### Updating Custom Profile Files
-This plugin is relatively easy in regards to updating custom files, as it only requires profile and route adjustments. If you do not have any existing edits to these custom files, you can use the files in the custom_files folder of this repository as-is. If you do, then you may use them as templates to add the lines of code needed for the renown plugin.
+This plugin is relatively easy in regards to updating custom files, as it only requires profile and route adjustments. If you do not have any existing edits to these custom files, you can use the files in+ the custom_files folder of this repository as-is. If you do, then you may use them as templates to add the lines of code needed for the renown plugin.
 
 #### aresmush/plugins/profile/custom_char_fields.rb
 Update with: custom_files/custom_char_fields.rb
