@@ -10,7 +10,7 @@ Wherever progress is awarded based on IC achievements, be it for the individual 
 The respective amounts for awarded renown points are up to admin, but within this system it is possible to define certain standard types that come with default amount suggestions. Even if visibility of renown details can be configured through a setting within the renown.yml config file, I'd recommend visibility for the sake of transparency.
 
 ### What this plugin covers
-* Admin: Awarding points, viewing current renown, resetting renown of all characters. Both from the game client and the webportal.
+* Admin: Awarding points, viewing current renown, resetting renown of all characters. Both from the game client and the webportal. PLease note that the name of the admin awarding the points will be listed in the entries of the webportal view and game client view, for reasons of transparency.
 * Players: View their current renown status, their renown entries and respective points, both from the game client and the webportal.
 * Webportal: Renown Management route, where admin can view character points and family/org points, add entries, reset points.
 * Webportal: Renown top ranking lists route.
