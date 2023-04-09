@@ -18,7 +18,7 @@ The respective amounts for awarded renown points are up to admin, but within thi
 * Regular cron job to post an announcement of the character who has earned the most renown in a specified time span.
 
 ## Screenshots
-### InGame client and webportal views of the 'renown/view' command
+### Game client and webportal views of the 'renown/view' command
 ![ren-own-view-client](/images/renown_view_client.PNG)
 
 ![ren-own-view-webportal](/images/renown_view_webportal.PNG)
@@ -45,6 +45,11 @@ Adding new renown entries and resetting all renown can be triggered through the 
 
 Here we have the view for a single org. This view is limited to admin and coder roles. 
 
+### Renown Ranking Views
+
+![renown-top-client](/images/renown_top_client.PNG)
+
+![renown-top-webportal](/images/renown_top_webportal.PNG)
 
 ## Installation
 In the game, run: plugin/install https://github.com/cailleach1310/ares-renown-plugin
