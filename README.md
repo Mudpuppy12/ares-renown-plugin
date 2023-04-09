@@ -10,7 +10,7 @@ Wherever progress is awarded based on IC achievements, be it for the individual 
 The respective amounts for awarded renown points are up to admin, but within this system it is possible to define certain standard types that come with default amount suggestions. Even if visibility of renown details can be configured through a setting within the renown.yml config file, I'd recommend visibility for the sake of transparency.
 
 ### What this plugin covers
-* Admin: Awarding points, viewing current renown, resetting renown of all characters. Both from the game client and the webportal. PLease note that the name of the admin awarding the points will be listed in the entries of the webportal view and game client view, for reasons of transparency.
+* Admin: Awarding points, viewing current renown, resetting renown of all characters. Both from the game client and the webportal. Please note that the name of the admin awarding the points will be listed in the entries of the webportal view and game client view, for reasons of transparency.
 * Players: View their current renown status, their renown entries and respective points, both from the game client and the webportal.
 * Webportal: Renown Management route, where admin can view character points and family/org points, add entries, reset points.
 * Webportal: Renown top ranking lists route.
@@ -119,7 +119,7 @@ Maybe the expression 'renown' doesn't quite fit what you need for your game. For
 Simply replace 'Renown' with the expression of your choice in the key 'renown_title'. This should affect relevant routes in the webportal and templates in the game client.
 
 #### Defining Aliases for the Commands
-Clientside, aliases need to be added to the 'renown.yml' as shortcuts, as you'll probably wish to use the new expression for the client commands. See the example below.
+Clientside, aliases need to be added to the 'renown.yml' as shortcuts, as you'll probably wish to use the new expression for the client commands. See the example below. Don't forget to 'load renown' from the game client after applying your changes to the 'renown.yml' file.
 
      shortcuts:
        influence/add: renown/add
