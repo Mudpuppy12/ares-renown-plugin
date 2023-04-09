@@ -18,13 +18,13 @@ The respective amounts for awarded renown points are up to admin, but within thi
 * Regular cron job to post an announcement of the character who has earned the most renown in a specified time span.
 
 ## Screenshots
-### In views of the 'renown/view' command
+### InGame client and webportal views of the 'renown/view' command
 ![ren-own-view-client](/images/renown_view_client.PNG)
 
 ![ren-own-view-webportal](/images/renown_view_webportal.PNG)
 
-If 'visible' flag is set to 'false' in the config, this view is only to the respective character and admin. Otherwise visible to all.
-The view if psart of the character page on the webportal.
+If 'visible' flag is set to 'false' in the config, this view is only available for the respective character and admin. Otherwise visible to all.
+This view is part of the character page on the webportal.
 
 ### Webportal view of the renown management route (admin)
 ![renown-management-webportal](/images/renown_management_webportal.PNG)
