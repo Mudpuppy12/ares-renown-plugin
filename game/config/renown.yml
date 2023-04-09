@@ -3,18 +3,21 @@ renown:
   achievements:
     renown_leading:
       type: story
-      message: Leader of the week.
+      message: Was announced as leading in the specified time span in the regular
+        bbpost.
     renown_favorite:
       type: story
-      message: Favorite at the end of the season.
-  regular_check_cron:
-    day:
-    - Mon
+      message: Overall leader at the end of the season.
+  cron_message_title: Favorite of the Week
+  cron_renown_days: 7
+  cron_regular_check:
+    day_of_week:
+    - Sun
     hour:
-    - 11
+    - 12
     minute:
-    - 50
-  renown_category: Announcements
+    - 34
+  cron_message_category: Announcements
   renown_fields:
   - field: name
     width: 28
@@ -34,9 +37,7 @@ renown:
   - group: faction
     value: Noble
   renown_title: Renown
-  shortcuts:
-    influence/view: renown/view
-    influence/top: renown/top
+  shortcuts: {}
   standard_types:
   - type: Freeform
     points: 0

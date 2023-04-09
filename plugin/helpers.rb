@@ -13,6 +13,22 @@ module AresMUSH
         return points
      end
 
+     def self.calculate_gained_time (name,days)
+       points = 0
+       char = Character.find_one_by_name name
+        if !char
+          return nil
+        end
+        now = Date.today
+        start_date = (now - days)
+        char.gained.each do |c|
+          if (c.created_at >= start_date)
+              points = points + c.value
+          end
+        end
+        return points
+     end
+
      def self.add_entry(name, title, value, adminname)
         char = Character.find_one_by_name name
         if !char 
@@ -103,16 +119,19 @@ module AresMUSH
        list = list.sort_by { |entry| entry[:total]}.reverse
        if (limit > 0) && (list.length > limit)
           list = list[0..(limit-1)]
-       end   
+       end
+       list.each do |l|
+          l[:total] = Renown.prettify(l[:total])
+       end
        return list
     end
 
-    def self.get_max_renown_char
+    def self.get_max_renown_char(days)
        max = 0
        name = "Nobody"
        chars = Chargen.approved_chars
        chars.each do |c|
-           renown = Renown.calculate_gained(c.name)
+           renown = Renown.calculate_gained_time(c.name,days)
            if (renown > max)
               max = renown
               name = c.name

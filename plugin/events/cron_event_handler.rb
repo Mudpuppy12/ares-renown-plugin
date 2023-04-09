@@ -3,16 +3,18 @@ module AresMUSH
     class CronEventHandler
      
       def on_event(event)
-        config = Global.read_config("renown", "regular_check_cron")
+        config = Global.read_config("renown", "cron_regular_check")
         if Cron.is_cron_match?(config, event.time)
           Global.logger.debug "Checking current renown."
-          name = Renown.get_max_renown_char
-          points = Renown.calculate_gained(name)
-          title = "Favorite of the Week: " + name
+          days = Global.read_config("renown", "cron_renown_days")
+          message_title = Global.read_config("renown", "cron_message_title")
+          name = Renown.get_max_renown_char(days)
+          points = Renown.prettify(Renown.calculate_gained_time(name,days))
+          title = message_title + ": " + name
           Forum.system_post(
-            Global.read_config("renown", "renown_category"),
+            Global.read_config("renown", "cron_message_category"),
             title, 
-            t('renown.weekly_favorite_message', :name => name, :points => points))
+            t('renown.regular_renown_message', :name => name, :points => points, :days => days, :renown_name => Renown.title.downcase ))
           target = Character.find_one_by_name(name)
           Achievements.award_achievement(target, "renown_leading")
         end

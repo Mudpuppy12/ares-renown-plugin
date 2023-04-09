@@ -19,6 +19,10 @@ module AresMUSH
       Global.read_config("renown", "visible")
     end
 
+    def self.title
+      Global.read_config("renown", "renown_title")
+    end
+
     def self.group
       Global.read_config("renown", "renown_group")
     end
