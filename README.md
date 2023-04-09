@@ -40,6 +40,13 @@ Update with: custom_files/profile-custom-tabs.hbs
 
 ## Configuration
 
+### CSS file
+Please add the following lines to your AdesMUSH CSS file:
+
+    .renown-line {
+      padding: 5px;
+      border-bottom: 1px solid #c0c0c0; }
+
 ### Other plugins
 
 #### /aresmush/game/config/website.yml
