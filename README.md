@@ -115,9 +115,6 @@ Configure here the time at which the cron job will run. If you don't want it to 
 #### cron_renown_days
 This value defines the number of days that will be considered for the regular renown check.
 
-#### renown_fields
-These fields will be shown in the webportal renown management route.
-
 #### renown_group
 Define here the group that will as family/organisation benefit from their members' renown. For example "house" or "family". Please use lowercase for this entry.
 
@@ -166,9 +163,10 @@ Clientside, aliases need to be added to the 'renown.yml' as shortcuts, as you'll
        influence/reset: renown/reset
        influence/top: renown/top
        influence/view: renown/view
+       influence/all: renown/all
 
 #### Adjusting the Help Files
-You'll need to adjust the help files in the folders /plugins/renown/help/en: rename them and edit them.
+You'll need to adjust the help files in the folder /plugins/renown/help/en/. Rename them and edit them.
 
 #### Further Adjustments
 Custom profile files may have to be adjusted, also some website menu entries.
