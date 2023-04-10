@@ -43,6 +43,8 @@ module AresMUSH
           return RenownViewCmd
         when "add"
           return RenownAddCmd
+        when "all"
+          return RenownAllCmd
         when "reset"
           return RenownResetCmd
         when "group"
