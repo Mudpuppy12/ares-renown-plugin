@@ -1,5 +1,5 @@
 # Ares Renown Plugin
-A plugin for handling renown - useful in games where renown/glory/influence points are awarded. 
+A plugin for handling renown - useful in games where points are awarded for deeds or achievements. 
 
 ## Credits
 Lyanna @ AresCentral
@@ -16,6 +16,7 @@ The respective amounts for awarded renown points are up to admin, but within thi
 * Webportal: Renown top ranking lists route.
 * Game client: renown/top command to view top ranking lists on game.
 * Regular cron job to post an announcement of the character who has earned the most renown in a specified time span.
+* 'renown' can be easily changed into another expression (i.e. fame, influence, glory, etc), so that the plugin can be added to a wider range of games. 
 
 ## Screenshots
 ### Game client and webportal views of the 'renown/view' command
