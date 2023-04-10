@@ -11,44 +11,18 @@ export default Component.extend({
     pcRenownTitle: null,
     pcRenownPoints: 0,
 
-    getPoints: computed('model{standard_types}', function(selected_type) {
-        if (selected_type == 'Freeform') {
-           return nil
-        }
-
-        let types = this.get('model.people.standard_types');
-        let points = 0;
-        types.forEach(function(entry) {
-            if (entry.type == selected_type) {
-               let points = entry.points;
-            }
-        });
-        return points;
-    }),
+    didInsertElement: function() {
+      this._super(...arguments);
+      let defaultName = this.chars ? this.chars[0] : '';
+      this.set('renownName', defaultName);
+    },
 
     actions: { 
       
-      updateFields(selected_type) {
-//        if (selected_type == 'Freeform') {
-//           return nil
-//        }
-
-//        let points = 0;
-        this.types.forEach(function(entry) {
-            if (entry.type == selected_type) {
-               let points = entry.points;
-            }
-        });
-
-        this.set('renownTitle', selected_type);
-        this.set('renownPoints', points);
-        this.updated();
-      },
-
       RenownAddEntry() {
         let api = this.gameApi;
-      
-        let pcRenownName = this.renownName
+        let defaultName = this.renownName ? this.chars[0] : '';
+        let pcRenownName = this.renownName || defaultName;
         let pcRenownTitle = this.renownTitle
         let pcRenownPoints = this.renownPoints
 
@@ -57,8 +31,8 @@ export default Component.extend({
           return;
         }
 
-        if (pcRenownTitle == null) {
-          this.flashMessages.danger("You haven't entered a title.");
+        if (pcRenownTitle == null || pcRenownTitle == "") {
+          this.flashMessages.danger("You haven't entered a reason.");
           return;
         }
 
