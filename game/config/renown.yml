@@ -12,26 +12,12 @@ renown:
   cron_renown_days: 7
   cron_regular_check:
     day_of_week:
-    - Sun
+    - Mon
     hour:
-    - 12
+    - 06
     minute:
-    - 34
+    - 15
   cron_message_category: Announcements
-  renown_fields:
-  - field: name
-    width: 28
-    title: Name
-  - field: gained
-    width: 10
-    title: Renown Gained
-  - field: group
-    value: house
-    width: 18
-    title: House
-  - field: rank
-    width: 18
-    title: Rank
   renown_group: house
   renown_members:
   - group: faction
@@ -41,18 +27,6 @@ renown:
   standard_types:
   - type: Freeform
     points: 0
-  - type: Minor Scandal
-    points: -50
-  - type: Major Scandal
-    points: -150
-  - type: Single Contest Winner
-    points: 200
-  - type: Overall Contest Winner
-    points: 500
-  - type: Fitting Remark
-    points: 50
-  - type: Courageous Statement
-    points: 100
   visible: true
   web_renown_total_fields:
   - field: group
