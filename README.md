@@ -110,7 +110,7 @@ This is the forum category that the regular cron job will post to. Default is "A
 Title for the regular forum post, as this will depend on context and time span.
 
 #### cron_regular_check
-Configure here the time at which the cron job will run.
+Configure here the time at which the cron job will run. If you don't want it to run at all, change this entry to "{}".
 
 #### cron_renown_days
 This value defines the number of days that will be considered for the regular renown check.
@@ -129,7 +129,7 @@ Here you can define which kinds of characters are considered in the renown syste
        value: Noble
 
 #### renown_title
-This is where you define the expression used for renown in your game, if "Renown" doesn't work for you. Other options include for instance "Influence" and "Glory".
+This is where you define the expression used for renown in your game, if "Renown" doesn't work for you and you want to change it into something else.
 
 #### shortcuts
 Here is a space where you can define shortcuts for the commands.
@@ -152,7 +152,7 @@ Set this to "false", if you don't want renown to be visible to other players. De
 These entries are listed in the renown management route and can be configured here.
 
 ### Optional: Replace 'renown' with another expression
-Maybe the expression 'renown' doesn't quite fit what you need for your game. For example, 'glory' or 'influence' might be better choices, or something else entirely.
+Maybe the expression 'renown' doesn't quite fit what you need for your game. For example, 'glory' might be a better choice, or something else entirely.
 
 #### Modify the Config File 
 Simply replace 'Renown' with the expression of your choice in the key 'renown_title'. This should affect relevant routes in the webportal and templates in the game client.
