@@ -34,11 +34,14 @@ module AresMUSH
         
         orgtype = Renown.group.titleize
 
+        renown_title = Renown.title
+
         {
           titles: titles,
           people: people,
           renown: total,
-          orgtype: orgtype 
+          orgtype: orgtype, 
+          title: renown_title
         }
       end
     end
