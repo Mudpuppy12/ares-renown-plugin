@@ -9,7 +9,17 @@
   <tbody>
     {{#each this.list as |entry| }}
     <tr>
-        <td>{{entry.name}}</td>
+        {{#if (eq this.mode "char") }}
+           <td><LinkTo @route="char" @model={{entry.name}}> {{entry.name}}</LinkTo> </td>
+        {{else if (eq this.mode "org") }}
+           {{#if this.showLinks}}
+              <td><LinkTo @route="wiki-page" @model="{{this.prefix}}{{entry.name}}"> {{entry.name}}</LinkTo> </td>
+           {{else}}
+              <td>{{entry.name}}</td>
+           {{/if}}
+        {{else}}
+           <td>{{entry.name}}</td>
+        {{/if}}
         <td>{{entry.total}}</td>
     </tr>
     {{/each}}

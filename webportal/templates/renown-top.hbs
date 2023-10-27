@@ -4,13 +4,12 @@
    <div class="row">
        <div class="col col-md-6 col-sm-12">
             <h2>Top Ten Characters</h2>
-            <RenownTopList @list={{this.model.toplist.chars}} @renowntitle={{this.model.toplist.renown_title}}/>
+            <RenownTopList @mode="char" @list={{this.model.toplist.chars}} @renowntitle={{this.model.toplist.renown_title}}/>
        </div>
        <div class="col col-md-6 col-sm-12">
             <h2>Top Ten {{this.model.toplist.orgname}}</h2>
-            <RenownTopList @list={{this.model.toplist.orgs}} @renowntitle={{this.model.toplist.renown_title}}/>
+            <RenownTopList @mode="org" @showLinks={{this.model.toplist.show_links}} @prefix={{this.model.toplist.org_prefix}} @list={{this.model.toplist.orgs}} @renowntitle={{this.model.toplist.renown_title}}/>
        </div>
    </div>
 
 {{outlet}}
-

@@ -8,16 +8,18 @@ renown:
     renown_favorite:
       type: story
       message: Overall leader at the end of the season.
+  cron_message_category: Announcements
   cron_message_title: Favorite of the Week
-  cron_renown_days: 7
   cron_regular_check:
     day_of_week:
     - Mon
     hour:
-    - 06
+    - 6
     minute:
     - 15
-  cron_message_category: Announcements
+  cron_renown_days: 7
+  org_links: false
+  org_page_prefix: {}
   renown_group: house
   renown_members:
   - group: faction
