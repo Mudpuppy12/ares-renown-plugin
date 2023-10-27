@@ -13,7 +13,7 @@ The respective amounts for awarded renown points are up to admin, but within thi
 * Admin: Awarding points, viewing current renown, resetting renown of all characters. Both from the game client and the webportal. Please note that the name of the admin awarding the points will be listed in the entries of the webportal view and game client view, for reasons of transparency.
 * Players: View their current renown status, their renown entries and respective points, both from the game client and the webportal.
 * Webportal: Renown Management route, where admin can view character points and family/org points, add entries, reset points.
-* Webportal: Renown top ranking lists route.
+* Webportal: Renown top ranking lists route. This includes now links to char pages and optional links to wiki org pages.
 * Game client: renown/top command to view top ranking lists on game.
 * Regular cron job to post an announcement of the character who has earned the most renown in a specified time span.
 * 'renown' can be easily changed into another expression (i.e. fame, influence, glory, etc), so that the plugin may be applicable to a wider range of games. 
@@ -114,6 +114,14 @@ Configure here the time at which the cron job will run. If you don't want it to 
 
 #### cron_renown_days
 This value defines the number of days that will be considered for the regular renown check.
+
+#### org_links
+This is set to 'false' by default. If you have org pages defined on your wiki, you can enable org links on the renown-top route by setting this option to 'true'.
+
+#### org_page_prefix
+Define here an optional prefix to org pages in the game wiki section. Per default this is set to '{}', meaning that org links will have identical org page names. If you have a more refined org page name definition, you'll have to specify the org page prefix here, see the example below. Org links will only show if the option 'org_links' is set to 'true'.
+
+![org_page_prefix_example](/images/org_page_prefix.PNG)
 
 #### renown_group
 Define here the group that will as family/organisation benefit from their members' renown. For example "house" or "family". Please use lowercase for this entry.
