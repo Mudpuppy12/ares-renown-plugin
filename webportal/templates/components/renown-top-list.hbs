@@ -13,7 +13,7 @@
            <td><LinkTo @route="char" @model={{entry.name}}> {{entry.name}}</LinkTo> </td>
         {{else if (eq this.mode "org") }}
            {{#if this.showLinks}}
-              <td><LinkTo @route="wiki-page" @model="{{this.prefix}}{{entry.name}}"> {{entry.name}}</LinkTo> </td>
+              <td><LinkTo @route="wiki-page" @model="{{this.prefix}}{{entry.name}}{{this.postfix}}"> {{entry.name}}</LinkTo> </td>
            {{else}}
               <td>{{entry.name}}</td>
            {{/if}}

@@ -20,6 +20,7 @@ renown:
   cron_renown_days: 7
   org_links: false
   org_page_prefix: {}
+  org_page_postfix: {}
   renown_group: house
   renown_members:
   - group: faction
