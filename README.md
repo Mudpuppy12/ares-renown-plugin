@@ -119,9 +119,12 @@ This value defines the number of days that will be considered for the regular re
 This option pertains to the renown-top route, it is set to 'false' by default. If you have org pages defined on your wiki, you can enable org links by setting this option to 'true'.
 
 #### org_page_prefix
-This option pertains to the renown-top route. Define here an optional prefix to org pages in the game wiki section. Per default this is set to '{}', meaning that org links will have identical org page names. If you have a more refined org page name definition, you'll have to specify the org page prefix here, see the example below. Org links will only show if the option 'org_links' is set to 'true'.
+This option pertains to the renown-top route. Define here an optional prefix to org pages in the game wiki section. Per default this is set to '{}', meaning that org links will have identical org page names. If you have a more refined org page name definition, you can specify the org page prefix here, see the example below. Org links will only show if the option 'org_links' is set to 'true'.
 
 ![org_page_prefix_example](/images/org_page_prefix.PNG)
+
+#### org_page_postfix
+This is set to {} per default. Here you can define stuff that comes *after* the org name in the wiki page name, for example '_family'.
 
 #### renown_group
 Define here the group that will as family/organisation benefit from their members' renown. For example "house" or "family". Please use lowercase for this entry.
@@ -182,7 +185,7 @@ Custom profile files may have to be adjusted, also some website menu entries.
 ### Updating to Latest Version with Char and Org Links (Renown-Top Route)
 If you have this plugin installed in an earlier version and want to update to this version:
 - Run the install from the game client again (see above).
-- Add the following keys to your renown.yml config: *org_links* and *org_page_prefix*, at least with their default values. These keys are explained above. They have to be added manually, because your existing renown.yml won't be modified through a reinstall of the plugin. **Don't replace your old renown.yml with the new renown.yml from this repository if you've already made changes to the renown config!**
+- Add the following keys to your renown.yml config: *org_links*, *org_page_postfix* and *org_page_prefix*, at least with their default values. These keys are explained above. They have to be added manually, because your existing renown.yml won't be modified through a reinstall of the plugin. **Don't replace your old renown.yml with the new renown.yml from this repository if you've already made changes to the renown config!**
 
 ## Uninstallation
 Removing the plugin requires some code fiddling. See [Uninstalling Plugins](https://www.aresmush.com/tutorials/code/extras.html#uninstalling-plugins).
