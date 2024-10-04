@@ -89,7 +89,10 @@ module AresMUSH
       orgs = []
       chars = Renown.get_renown_chars
       chars.each do |c|
-         orgs.push c.groups[orgname]
+         org = c.groups[orgname]
+         if (org != "")    # quick patch of an error
+            orgs.push org
+         end
       end 
       orgs.uniq.sort
     end
