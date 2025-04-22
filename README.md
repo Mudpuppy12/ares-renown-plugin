@@ -5,7 +5,7 @@ A plugin for handling renown - useful in games where points are awarded for deed
 Lyanna @ AresCentral
 
 ## Compatibility
-This plugin can is compatible with AresMUSH 1.0.9 but also with previous versions.
+This plugin in its most recent version is compatible with AresMUSH 2.0. If you have a previous version of this plugin installed, make sure to upgrade the plugin before you upgrade your game to AresMUSH 2.0.
 
 ## Overview
 Wherever progress is awarded based on IC achievements, be it for the individual character or the family or organisation they are part of, game staff may award points and review them at certain times to decide an improvement or worsening of their situation. This system is based on the idea of seasons, meaning that renown points can be reset with the start of each new season.
