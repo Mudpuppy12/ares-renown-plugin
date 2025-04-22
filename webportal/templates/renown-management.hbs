@@ -37,8 +37,8 @@
 <ResetAllRenown @title={{this.model.people.title}} @resetAllRenown={{this.resetAllRenown}} />
 
 <div align="right">
-<button name="addentry" {{action (mut this.addRenownEntry) true}} class="btn btn-secondary">Add Entry</button>
-<button name="renownreset" {{action (mut this.resetAllRenown) true}} class="btn btn-secondary">Reset All</button>
+<button name="addentry" {{on 'click' (fn this.doAddRenownEntry true)}} class="btn btn-secondary">Add Entry</button>
+<button name="renownreset" {{on 'click' (fn this.doResetAllRenown true)}} class="btn btn-secondary">Reset All</button>
 </div>
 
 {{outlet}}

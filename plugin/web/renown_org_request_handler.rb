@@ -6,7 +6,7 @@ module AresMUSH
         fields = Global.read_config("renown", "web_renown_total_fields")
         titles = fields.map { |f| f['title'] }
         titles << Renown.title
-        org = request.args[:org]
+        org = request.args['org']
 
         chars = Chargen.approved_chars.select {|c| c.groups[Renown.group] == org }
         chars = chars.sort_by { |c| c.name}

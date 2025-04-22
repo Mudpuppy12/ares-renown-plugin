@@ -1,6 +1,7 @@
 import { computed } from '@ember/object';
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
+import { pushObject } from 'ares-webportal/helpers/object-ext';
 
 export default Controller.extend({
   gameApi: service(),
@@ -15,9 +16,9 @@ export default Controller.extend({
             let char = [];
             titles.forEach(function(title) {
                 let field = char_fields[title];
-                char.push(field);
+                pushObject(char, field, null, null);
             });
-            chars.push(char);
+            pushObject(chars, char, null, null);
         });
         return chars;
     })

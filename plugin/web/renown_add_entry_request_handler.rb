@@ -3,10 +3,10 @@ module AresMUSH
     class RenownAddEntryRequestHandler
       def handle(request)
         enactor = request.enactor
-        char = Character.find_one_by_name request.args[:name]
-        title = request.args[:title]
-        points = request.args[:points].to_i
-        type = request.args[:type]
+        char = Character.find_one_by_name request.args['name']
+        title = request.args['title']
+        points = request.args['points'].to_i
+        type = request.args['type']
 
         error = Website.check_login(request, true)
         return error if error
