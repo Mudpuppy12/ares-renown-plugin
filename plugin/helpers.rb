@@ -113,7 +113,9 @@ module AresMUSH
           chars.each do |c|
              list << { :name=>c.name, :total=>Renown.calculate_gained(c.name)}
           end
-       else
+       elsif ( type == {} )
+          list = []
+       else 
           orgs = Renown.renown_orgs(type)
           orgs.each do |h|
              list << { :name=>h, :total=>Renown.calculate_total(type,h)}
