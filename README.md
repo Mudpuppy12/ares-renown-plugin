@@ -185,11 +185,6 @@ You'll need to adjust the help files in the folder /plugins/renown/help/en/. Ren
 #### Further Adjustments
 Custom profile files may have to be adjusted, also some website menu entries.
 
-### Updating to Latest Version with Char and Org Links (Renown-Top Route)
-If you have this plugin installed in an earlier version and want to update to this version:
-- Run the install from the game client again (see above).
-- Add the following keys to your renown.yml config: *org_links*, *org_page_postfix* and *org_page_prefix*, at least with their default values. These keys are explained above. They have to be added manually, because your existing renown.yml won't be modified through a reinstall of the plugin. **Don't replace your old renown.yml with the new renown.yml from this repository if you've already made changes to the renown config!**
-
 ## Uninstallation
 Removing the plugin requires some code fiddling. See [Uninstalling Plugins](https://www.aresmush.com/tutorials/code/extras.html#uninstalling-plugins).
 
