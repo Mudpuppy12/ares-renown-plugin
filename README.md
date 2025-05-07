@@ -160,7 +160,7 @@ Here you can define various standard types for renown entries when working with 
 Set this to "false", if you don't want renown to be visible to other players. Default is "true".
 
 #### web_renown_total_fields
-These entries are listed in the renown management route and can be configured here.
+These entries are listed in the renown management route and can be configured here. Use {} if you are not usings house or rankings.
 
 ### Optional: Replace 'renown' with another expression
 Maybe the expression 'renown' doesn't quite fit what you need for your game. For example, 'glory' might be a better choice, or something else entirely.
