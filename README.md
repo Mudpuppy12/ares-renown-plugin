@@ -130,7 +130,7 @@ This option pertains to the renown-top route. Define here an optional prefix to 
 This is set to {} per default. Here you can define stuff that comes *after* the org name in the wiki page name, for example '_family'.
 
 #### renown_group
-Define here the group that will as family/organisation benefit from their members' renown. For example "house" or "family". Please use lowercase for this entry.
+Define here the group that will as family/organisation benefit from their members' renown. For example "house" or "family". Please use lowercase for this entry. If you don't intend to use the plugin with houses or organisations, set this option to "{}".
 
 #### renown_members
 Here you can define which kinds of characters are considered in the renown system. Entries will be "group" and "value", for instance "faction" and "Noble". If you change this to "{}", all approved characters will be considered.
