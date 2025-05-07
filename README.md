@@ -67,10 +67,10 @@ Update with: custom_files/custom_char_fields.rb
 #### ares-webportal/app/custom-routes.js
 Update with: custom_files/custom-routes.js
 
-#### ares-webportal/app/templates/components/profile-custom.hbs
+#### ares-webportal/app/components/profile-custom.hbs
 Update with: custom_files/profile-custom.hbs
 
-#### ares-webportal/app/templates/components/profile-custom-tabs.hbs
+#### ares-webportal/app/components/profile-custom-tabs.hbs
 Update with: custom_files/profile-custom-tabs.hbs
 
 ## Configuration
